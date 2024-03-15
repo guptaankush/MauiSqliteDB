@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiSqliteDB.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid Padding="20" RowDefinitions="Auto, Auto, Auto, *">
+
+        <Entry x:Name="txtName" Placeholder="Enter Name Here..." />
+        <Entry
+            x:Name="txtClass"
+            Grid.Row="1"
+            Placeholder="Enter Class Here..." />
+
+        <Button
+            x:Name="btn"
+            Grid.Row="2"
+            Clicked="Button_Clicked"
+            Text="Save" />
+
+        <ListView
+            x:Name="lvStudent"
+            Grid.Row="3"
+            Margin="0,20"
+            ItemTapped="lvStudent_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Class}" Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+
+</ContentPage>
